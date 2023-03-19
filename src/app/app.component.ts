@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'clicker';
+
+  @Input()
+  value = 1;
+
+  clicker = {
+    clicksNum: 0
+  };
+
+  onClick() {
+    ++this.clicker.clicksNum;
+  }
 }
